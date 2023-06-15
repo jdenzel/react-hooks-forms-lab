@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 
-function ItemForm({ onItemFormSubmit }) {
+function ItemForm( {onItemFormSubmit} ) {
 
   const [addItem, setAdd] = useState("")
   const [itemCategory, setCategory] = useState("Produce")
@@ -21,13 +21,11 @@ function ItemForm({ onItemFormSubmit }) {
       name: addItem,
       category: itemCategory,
     };
-  onItemFormSubmit(newItem)
-  setAdd("")
-  setCategory("Produce")
-  
+    console.log(newItem)
+    onItemFormSubmit(newItem)
+    setAdd("")
+    setCategory("Produce")
   }
-
-  
 
   return (
     <form className="NewItem" onSubmit={handleSubmit} >
